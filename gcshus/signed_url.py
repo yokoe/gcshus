@@ -3,6 +3,11 @@ import google.auth
 from google.auth.transport import requests
 
 
+class NotServiceAccountException(Exception):
+    "Raised when the credentials has no service_account_email attribute"
+    pass
+
+
 def generate_download_signed_url_with_token_refresh(
     storage_client, bucket_name, blob_name, expiration_mins
 ):
@@ -26,7 +31,7 @@ def generate_download_signed_url_with_token_refresh(
             access_token=credentials.token,
         )
     else:
-        raise Exception("No service_account_email")
+        raise NotServiceAccountException
 
 
 def generate_download_signed_url(
