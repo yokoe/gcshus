@@ -13,7 +13,9 @@ LICENSE = "MIT"
 DOWNLOAD_URL = URL
 VERSION = "0.0.2"
 PYTHON_REQUIRES = ">=3.6"
-INSTALL_REQUIRES = open("requirements.txt").read().splitlines()
+INSTALL_REQUIRES = [
+    "google-cloud-storage>=2.7.0",
+]
 PACKAGES = ["gcshus"]
 KEYWORDS = "gcs"
 CLASSIFIERS = [
