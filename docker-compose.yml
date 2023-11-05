@@ -2,9 +2,7 @@ version: '3'
 services:
   gcshus:
     build: .
-    environment:
-      GOOGLE_APPLICATION_CREDENTIALS: /tmp/keys/gcp.json
     tty: true
     volumes:
       - .:/code
-      - ${GCP_KEY_PATH}:/tmp/keys/gcp.json:ro
+      - ~/.config:/root/.config
