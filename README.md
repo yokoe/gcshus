@@ -22,6 +22,14 @@ url = gcshus.generate_download_signed_url_with_token_refresh(
 )
 ```
 
+### Download a file
+```
+import gcshus
+from google.cloud import storage
+
+gcshus.download(storage.Client(), bucket, "some/remote/blob.txt", "local-file.txt")
+```
+
 ## Run test
 ```
 docker compose up
